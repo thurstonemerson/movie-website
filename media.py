@@ -31,7 +31,18 @@ class Movie():
         else:
             self.title = "Unknown"
             
-        self.movie_id = movie_id    
+        self.movie_id = movie_id
+        
+        if overview is not None:
+            self.overview = overview
+        else:
+            self.overview = "No overview supplied"
+        
+        if overview is not None:
+            self.poster_image_url = 'https://image.tmdb.org/t/p/w185' + poster_image_url
+        else:
+            self.poster_image_url = ''
+            
         self.release_date = release_date
         self.vote_average = vote_average
         self.trailer_youtube_url = "http://www.youtube.com"
