@@ -19,3 +19,20 @@ def get_latest_releases():
         
     return movies
 
+class Movie():
+    '''
+    Movie class holding the TMDb id, title, overview, poster image and release date
+    '''
+
+    def __init__(self, movie_id, title, overview, poster_image_url, release_date, vote_average):
+
+        if title is not None:
+            self.title = title
+        else:
+            self.title = "Unknown"
+            
+        self.movie_id = movie_id    
+        self.release_date = release_date
+        self.vote_average = vote_average
+        self.trailer_youtube_url = "http://www.youtube.com"
+
