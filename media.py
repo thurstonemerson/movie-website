@@ -15,7 +15,10 @@ def get_latest_releases():
     movies = []
 
     for result in movie_json['results']:           
-        print "{0}, {1}, {2}, {3}, {4}, {5}".format(result['id'], result['title'], result['overview'], result['poster_path'], result['release_date'], result['vote_average']))
+        movie = Movie(result['id'], result['title'], result['overview'], result['poster_path'], result['release_date'], result['vote_average'])
+        print movie.movie_id, movie.title.encode('utf8'), movie.poster_image_url.encode('utf8'), movie.release_date, movie.vote_average
+        
+        movies.append(movie)
         
     return movies
 
