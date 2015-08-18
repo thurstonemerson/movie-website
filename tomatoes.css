@@ -1,0 +1,46 @@
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html,body {
+	overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+
+body {
+	padding-top: 70px;
+}
+
+footer {
+	padding: 30px 30px 30px 30px;
+}
+
+#about {
+	text: center;
+	padding: 30px 30px 30px 30px;
+}
+
+.release-date {
+	float: right;
+}
+
+#trailer .modal-dialog {
+	margin-top: 200px;
+	width: 640px;
+	height: 480px;
+}
+
+
+.scale-media {
+	padding-bottom: 56.25%;
+	position: relative;
+}
+
+.scale-media iframe {
+	border: none;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+	background-color: white;
+}

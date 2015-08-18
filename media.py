@@ -4,6 +4,19 @@ Created on 31/07/2015
 @author: thurstonemerson
 '''
 
+import json
+import os
+
+def open_movies_page(movies):
+    '''This function opens main.html and appends the movie content'''
+    
+    main_file = open('index.html', 'r')
+    
+    #read the index page context and convert to unicode object
+    main_page_content = unicode(main_file.read(), 'utf8')
+    main_file.close()
+    
+
 def get_latest_releases():
 
     '''Retrieve movies from TMDb API that are now playing in theatres'''
