@@ -5,7 +5,29 @@ Created on 31/07/2015
 '''
 
 import json
+import urllib
+import webbrowser
 import os
+
+def create_movie_tile_row(movie1, movie2):
+    '''Creates a row in a bootstrap grid with two columns containing a movie tile each'''
+
+    content = ""
+    
+    return content
+
+
+def create_movie_tiles_content(movies):
+    ''' Creates the HTML content for the bootstrap movie grid'''
+    
+    content = u''
+    
+    # Take movies in groups of two in order to create rows with two columns of movies
+    for movie1, movie2 in zip(movies[0::2], movies[1::2]):
+        content += create_movie_tile_row(movie1, movie2)
+  
+        
+    return content
 
 def open_movies_page(movies):
     '''This function opens main.html and appends the movie content'''
@@ -15,6 +37,20 @@ def open_movies_page(movies):
     #read the index page context and convert to unicode object
     main_page_content = unicode(main_file.read(), 'utf8')
     main_file.close()
+
+    # Create or overwrite the output file
+    output_file = open('fresh_tomatoes.html', 'w')
+
+    # Replace the placeholder for the movie tiles with the actual dynamically generated content
+    rendered_content = main_page_content.format(movie_tiles=create_movie_tiles_content(movies))
+   
+    # Output the file after encoding as unicode-encoded string object 
+    output_file.write(rendered_content.encode('utf8'))
+    output_file.close()
+
+    # open the output file in the browser
+    url = os.path.abspath(output_file.name)
+    webbrowser.open('file://' + url, new=2)  # open in a new tab, if possible
     
 
 def get_latest_releases():
