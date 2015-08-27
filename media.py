@@ -9,6 +9,32 @@ import urllib
 import webbrowser
 import os
 
+# Make two columns of movie tiles for medium and large devices, tablet and mobile devices will stack tiles
+movie_tile_row_header = u'''
+        <div class="row form-group">
+        '''
+movie_tile_row_end = u'''
+        </div> <!-- /.div row-->
+        '''
+movie_tile_row_content = u'''
+            <div id="movie-tile" class="col-md-6">
+                <div class="media-left">
+                    <a href="#" class="view-trailer" data-movie-id="{movie_id}" data-toggle="modal" data-target="#trailer">
+                        <img class="media-object" src="{poster_image_url}" alt="...">
+                    </a>
+                 </div><!-- /.div media-left-->
+                 <div class="media-body">
+                     <h4 class="media-heading">{movie_title}</h4>
+                     <h6 class="media-heading">{vote_average}
+                         <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                         <div class="release-date">{release_date}</div>
+                     </h6>
+                     <p>{overview}</p>
+                     <button type="button" class="btn btn-default view-trailer" data-movie-id="{movie_id}" data-toggle="modal" data-target="#trailer">View trailer &raquo;</button>
+                </div><!-- /.div media-body-->
+             </div><!-- /.div col-md-6-->
+
+
 def create_movie_tile_row(movie1, movie2):
     '''Creates a row in a bootstrap grid with two columns containing a movie tile each'''
 
