@@ -27,6 +27,17 @@ $(document).on(
 						trailerYouTubeId = video.key;
 					}
 				});
+
+				var sourceUrl = 'http://www.youtube.com/embed/'
+						+ trailerYouTubeId + '?autoplay=1&html5=1';
+
+				$("#trailer-video-container").empty().append(
+						$("<iframe></iframe>", {
+							'id' : 'trailer-video',
+							'type' : 'text-html',
+							'src' : sourceUrl,
+							'frameborder' : 0
+						}));
 			});
 		});
 
