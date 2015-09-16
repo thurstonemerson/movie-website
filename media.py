@@ -14,6 +14,11 @@ API key is 23d81fdf84638b37ab9f8d898c12243c
 At the moment this program is tightly bound to the TMDb API so some more steps are necessary
 to remove this dependence (in case we should require using a different API in future)
 
+TODO:
+- Externalise strings for poster images, API key etc
+- Move TMDb API call from javascript to media module to be retrieved via a web service call
+- Display all now playing movies, 20 per page
+
 @author: thurstonemerson
 '''
 import json
