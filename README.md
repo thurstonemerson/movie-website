@@ -25,5 +25,9 @@ Javascript extensively adapted from the Udacity sample project fresh_tomatoes.py
 At the moment this program is tightly bound to the TMDb API so some more steps are necessary
 to remove this dependence, in case a move to a different API should be necessary
 
+###TODO:
+- Externalise API centric strings for poster images, API key etc
+- Move TMDb API call from javascript to media module to be retrieved via a web service call
+- Display all now playing movies, 20 per page
 
 
